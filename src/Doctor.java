@@ -1,6 +1,6 @@
 public class Doctor  {
 
-    int id;
+    static int id = 0;
     String name;
     String speciality;
 
@@ -11,10 +11,15 @@ public class Doctor  {
     Doctor(String name) {
         System.out.printf("Hola doctor %s", name);
         System.out.println();
+        id++;
     }
 
     public void showName() {
         System.out.println(name);
+    }
+
+    public void showId() {
+        System.out.printf("Id doctor %d%n", id);
     }
 
 
