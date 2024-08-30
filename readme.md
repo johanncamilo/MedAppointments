@@ -20,3 +20,8 @@
 * Se usan para llamar un variable sin utilizar un objeto
 * Se accesan usando en nombre de la clase y punto
 * Para poner miembros estaticos de una manera mas resumida se usa *'import static'*
+
+### Sobrecarga:
+* Métodos con el mismo nombre pero con distintos argumentos, y tipos de retorno
+* Los Constructores se sobrecargan
+

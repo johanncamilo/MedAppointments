@@ -8,9 +8,10 @@ public class Doctor  {
         System.out.println("nuevo doctor sin nombre");
     }
 
-    Doctor(String name) {
-        System.out.printf("Hola doctor %s", name);
-        System.out.println();
+    Doctor(String name, String speciality) {
+        this.name = name;
+        this.speciality = speciality;
+        System.out.printf("Hola doctor %s %s %n", this.speciality, this.name);
         id++;
     }
 
