@@ -24,4 +24,14 @@
 ### Sobrecarga:
 * Métodos con el mismo nombre pero con distintos argumentos, y tipos de retorno
 * Los Constructores se sobrecargan
+* ej: En la clase doctor serían los constructores ⬇️
+```
+ Doctor() { ... }
+ Doctor(String name, int age) { ... }
+```
+
+### Niveles de acceso
+* **protected:** sólo pakage, padre, e hijos
+* **default:** sólo pakage, padre
+* **private:** sólo padre
 

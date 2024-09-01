@@ -1,4 +1,4 @@
-import static  ui.UIMenu.*;
+import static ui.UIMenu.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +13,8 @@ public class Main {
         drPaulVazo.showId();
 
         showMenu();
+
+        Patient patient = new Patient("Anai", "anai@gmail.com");
 
     }
 }
