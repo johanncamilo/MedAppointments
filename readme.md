@@ -57,3 +57,19 @@ class ClaseExterior {
 ```
 * Las clases anidadas son clases helper para encapsular lógica adicional 
 ![img.png]( img/exampleStaticNesting.png)
+> **Lo mejor es usar clases estáticas anidadas, lo demás es perder el tiempo como lokita**
+
+<br>
+
+
+![img.png](img/claseInterna.png)
+> Forma de instanciar objeto de una clase interna anidada
+
+
+![img.png](img/claseLocalAMetodo.png)
+> * que loco se pueden definir clases dentro de un método :O <br>
+> * el scope de esta clase está dentro del método que la contiene
+
+
+### Enum
+Un Enum es un tipo de dato que permite definir una colección de constantes
