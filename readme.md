@@ -72,4 +72,5 @@ class ClaseExterior {
 
 
 ### Enum
-Un Enum es un tipo de dato que permite definir una colección de constantes
+* Un Enum es un tipo de dato que permite definir una colección de constantes
+* También tiene Contructor, métodos y atributos
