@@ -1,6 +1,6 @@
-import java.util.Date;
+package old;
 
-import static ui.UIMenu.*;
+import java.util.Date;
 
 enum Level {
     LOW,
@@ -18,7 +18,7 @@ enum Day {
     SUNDAY("Domingo", "Dimanche");
 
     private String spanish;
-    private String french;
+    private String french; 
 
     /**
      * Constructor del enum
@@ -40,7 +40,7 @@ enum Day {
 public class Main {
     public static void main(String[] args) {
 
-        Doctor myDoctor = new Doctor("Camilo Colmenares", "camilo@gmail.com", "Radiologo");
+        Doctor myDoctor = new Doctor("Camilo Colmenares", "Radiologo");
         myDoctor.addAppointment(new Date(), "4pm");
         myDoctor.addAppointment(new Date(), "1pm");
         myDoctor.addAppointment(new Date(), "10am");
@@ -51,12 +51,14 @@ public class Main {
         }
 
         myDoctor.showName();
+        myDoctor.showId();
 
-        Doctor drPaulVazo = new Doctor("Polvazo", "paulvazo@gmail.com", "Kinesiologo");
+        Doctor drPaulVazo = new Doctor("Polvazo", "Kinesiologo");
         drPaulVazo.showName();
+        drPaulVazo.showId();
 
         // showMenu();
-        Patient patient = new Patient("Anai", "anai@gmail.com");
+        //Patient patient = new Patient("Anai", "anai@gmail.com");
 
         System.out.println();
 

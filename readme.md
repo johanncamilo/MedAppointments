@@ -74,3 +74,12 @@ class ClaseExterior {
 ### Enum
 * Un Enum es un tipo de dato que permite definir una colección de constantes
 * También tiene Contructor, métodos y atributos
+
+### SUPER
+* El constructor de la padre **SIEMPRE** debe ir al inicio del constructor hijo
+![img.png](img/SUPER.png)
+
+```java
+super(name, email);
+```
+> Constructor padre dentro de constructor hijo

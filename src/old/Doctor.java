@@ -1,28 +1,36 @@
+package old;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor extends User {
+public class Doctor {
+
+    static int id = 0;
+    private String name;
+    private String email;
     private String speciality;
+
+
+    Doctor() {
+        System.out.println("nuevo doctor sin nombre");
+    }
 
     /**
      * Sobrecarga de método constructor
      * */
-    Doctor(String name, String email, String speciality) {
-        super(name, email);
+    Doctor(String name, String speciality) {
+        this.name = name;
         this.speciality = speciality;
-        System.out.printf("Hola doctor %s %s %n", this.speciality, super.getName());
-    }
-
-    public String getSpeciality() {
-        return speciality;
-    }
-
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
+        System.out.printf("Hola doctor %s %s %n", this.speciality, this.name);
+        id++;
     }
 
     public void showName() {
-        System.out.println(super.getName());
+        System.out.println(name);
+    }
+
+    public void showId() {
+        System.out.printf("Id doctor %d%n", id);
     }
 
     /**
