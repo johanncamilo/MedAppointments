@@ -41,6 +41,15 @@ public class Doctor extends User {
     }
 
     /**
+     * Con este Override se está reutilizando el comportamiento del Override en el padre
+     * Y con la clase inner le está añadiendo otro comportamiento
+     * */
+    @Override
+    public String toString() {
+        return super.toString() + String.format("\nSpeciality: %s, \nAvailable: %s", getSpeciality(), getAvailableApointmens().toString());
+    }
+
+    /**
      * clase anidada: AvailableAppoinment dentro de la clase Doctor
      * */
     public static class AvailableAppointment {
@@ -67,6 +76,11 @@ public class Doctor extends User {
 
         public void setTime(String time) {
             this.time = time;
+        }
+
+        @Override
+        public String toString() {
+             return String.format("Available appointments \nDate: %s, \n Time: %s", getDate(), getTime());
         }
     }
 }

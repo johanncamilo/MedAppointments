@@ -96,3 +96,7 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 * por defecto trae el nombre de la clase más un hashCode
 * por eso se modifica su comportamiento con un @Override en los hijos
 * Aquí se hizo Override de .toString() e User y Patient
+
+## Polimorfismo
+* Es sobreescribir un método con comportamientos diferentes
+* La **sobrecarga** y la **sobreescritura** son tipos de polimorfismo
