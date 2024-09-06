@@ -83,3 +83,16 @@ class ClaseExterior {
 super(name, email);
 ```
 > Constructor padre dentro de constructor hijo
+
+## SOBREESCRITURA (OVERRIDE) 
+Cuando se hereda un método y se redefine con una implementación distinta a la del padre
+* cuando un método es static o final no se puede sobreescribir
+* Sobreescritura de Constructor: reescribir el constructor del hijo con argumentos diferentes 
+
+
+### toString() Override:
+* Método de la clase *Object* que es por defecto el papá de todas las clases de manera implicita
+* al ejecutar System.out.println(object) se está ejecutando .toString()
+* por defecto trae el nombre de la clase más un hashCode
+* por eso se modifica su comportamiento con un @Override en los hijos
+* Aquí se hizo Override de .toString() e User y Patient

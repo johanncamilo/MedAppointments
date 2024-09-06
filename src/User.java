@@ -53,6 +53,10 @@ public class User {
         } else if (phoneNumber.length() == 8) {
             this.phoneNumber = phoneNumber;
         }
+    }
 
+    @Override
+    public String toString() {
+        return String.format("User: %s, Email: %s, \n Address: %s, Phone: %s", name, email, address, phoneNumber);
     }
 }

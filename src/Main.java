@@ -68,5 +68,7 @@ public class Main {
         System.out.println(Day.MONDAY.getSpanish());
         System.out.println(Day.THURSDAY.getFrench());
 
+        System.out.println(patient);
+
     }
 }

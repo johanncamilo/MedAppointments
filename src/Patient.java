@@ -41,4 +41,9 @@ public class Patient extends User {
     public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
+
+    @Override
+    public String  toString() {
+        return super.toString() + String.format("\nAge: %s, \nWeight: %s, \nHeight: %s, \nBlood: %s", getBirthday(), getWeight(), getHeight(), getBlood());
+    }
 }
