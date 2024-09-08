@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ public class Doctor extends User {
     /**
      * Sobrecarga de método constructor
      * */
-    Doctor(String name, String email, String speciality) {
+    public Doctor(String name, String email, String speciality) {
         super(name, email);
         this.speciality = speciality;
         System.out.printf("Hola doctor %s %s %n", this.speciality, super.getName());
@@ -50,7 +52,7 @@ public class Doctor extends User {
     }
 
     /**
-     * clase anidada: AvailableAppoinment dentro de la clase Doctor
+     * clase anidada: AvailableAppoinment dentro de la clase model.Doctor
      * */
     public static class AvailableAppointment {
         private int id;

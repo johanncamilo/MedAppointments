@@ -1,3 +1,5 @@
+package model;
+
 public class User {
 
     private int id;
@@ -57,6 +59,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("User: %s, Email: %s, \n Address: %s, Phone: %s", name, email, address, phoneNumber);
+        return String.format("model.User: %s, Email: %s, \n Address: %s, Phone: %s", name, email, address, phoneNumber);
     }
 }

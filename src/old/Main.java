@@ -58,7 +58,7 @@ public class Main {
         drPaulVazo.showId();
 
         // showMenu();
-        //Patient patient = new Patient("Anai", "anai@gmail.com");
+        //model.Patient patient = new model.Patient("Anai", "anai@gmail.com");
 
         System.out.println();
 

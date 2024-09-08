@@ -49,7 +49,7 @@ public class Doctor {
     }
 
     /**
-     * clase anidada: AvailableAppoinment dentro de la clase Doctor
+     * clase anidada: AvailableAppoinment dentro de la clase model.Doctor
      * */
     public static class AvailableAppointment {
         private int id;

@@ -1,6 +1,7 @@
-import java.util.Date;
+import model.Doctor;
+import model.Patient;
 
-import static ui.UIMenu.*;
+import java.util.Date;
 
 enum Level {
     LOW, MEDIUM, HIGH
@@ -40,7 +41,7 @@ public class Main {
         System.out.println("😎");
         System.out.println(myDoctor);
 
-//        Doctor drPaulVazo = new Doctor("Polvazo", "paulvazo@gmail.com", "Kinesiologo");
+//        model.Doctor drPaulVazo = new model.Doctor("Polvazo", "paulvazo@gmail.com", "Kinesiologo");
 
         // showMenu();
         Patient patient = new Patient("Anai", "anai@gmail.com");
