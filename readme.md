@@ -1,4 +1,4 @@
-# Medical Appointments![img.png](img/aguanteJava.png)
+# Medical Appointments!
 
 ## Key Concepts:
 
@@ -152,7 +152,6 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 ![img.png](img/collections.png)
 > Jerarquía de los collections en Java
 
-### Diagrama de decisión para uso de collections en Java:
-
+****
 ![img.png](img/decisionMapCollections.png)
 > Diagrama de decisión para uso de collections en Java
