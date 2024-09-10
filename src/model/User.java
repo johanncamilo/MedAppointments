@@ -1,6 +1,6 @@
 package model;
 
-public class User {
+public abstract class User {
 
     private int id;
     private String name;
@@ -61,4 +61,7 @@ public class User {
     public String toString() {
         return String.format("model.User: %s, Email: %s, \n Address: %s, Phone: %s", name, email, address, phoneNumber);
     }
+
+//    método obligatorio para sus herederos
+    public abstract void showDataUser();
 }

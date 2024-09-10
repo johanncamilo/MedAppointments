@@ -1,5 +1,6 @@
 import model.Doctor;
 import model.Patient;
+import model.User;
 
 import java.util.Date;
 
@@ -52,7 +53,13 @@ public class Main {
 //        System.out.println(Day.MONDAY.getSpanish());
 //        System.out.println(Day.THURSDAY.getFrench());
 
-        System.out.println(patient);
+//        System.out.println(patient);
 
+
+        User docM = new Doctor("Dr. Mario", "drmario@gmail.com", "prescribing");
+        User patL = new Patient("Luigi", "luigi@gmail.com");
+
+        docM.showDataUser();
+        patL.showDataUser();
     }
 }

@@ -48,4 +48,9 @@ public class Patient extends User {
     public String  toString() {
         return super.toString() + String.format("\nAge: %s, \nWeight: %s, \nHeight: %s, \nBlood: %s", getBirthday(), getWeight(), getHeight(), getBlood());
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("paciente \n bla bla bla");
+    }
 }

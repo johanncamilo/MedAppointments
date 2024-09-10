@@ -155,3 +155,46 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 ****
 ![img.png](img/decisionMapCollections.png)
 > Diagrama de decisión para uso de collections en Java
+
+## CLASES ABSTRACTAS
+
+Los métodos obligatoriios son los que tienen la palabra reservada **abstract**
+
+```java
+abstract void dibujate();
+```
+
+* Las clases abstractas siempre serán padres
+* Son una combinación de entre Interface y Herencia
+* **No** implementan todos los metodos
+* **No** crean instancias
+
+![img.png](img/abstracta.png)
+> * Resuelve el problema de las Interfaces que obligan a implementar todos los metodos
+> * Resuelve el problema de la Herencia de instanciar clases superiores innecesariamente porque son muy genéricas
+
+![img.png](img/claseAbstracta.png)
+
+![img.png](img/heredaDeAbstracta.png)
+
+### Implementación parcial de clases Abstractas
+
+![img.png](img/cannotInstantiate.png)
+> Al hacer la clase User abstracta ya no permite instanciar objetos
+****
+![img.png](img/canInstantiate.png)
+> Aquí se aplica un modelo de polimorfismo para instanciar una clase usando a sus hijos ya que tienen la implementación
+> de user
+
+### Métodos Obligatorios en una clase Abstracta
+
+![img.png](img/obligatorioAbstracta.png)
+![img.png](img/obligatorioAbstractaImplementacion.png)
+![img.png](img/obligatorioAbstractaImplementacion2.png)
+
+### Clase hija abstracta
+
+> * la clase hija abstracta debe **declarar los metodos obligatorios del padre**
+> * La clase concreta que herede de la hija abstracta debe implementar los metodos obligatorios usando **polimorfismo**
+    ![img.png](img/hijaAbstracta.png)
+    ![img.png](img/implHijaAbstracta.png)

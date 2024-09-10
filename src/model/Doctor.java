@@ -51,6 +51,11 @@ public class Doctor extends User {
         return super.toString() + String.format("\nSpeciality: %s, \nAvailable: %s", getSpeciality(), getAvailableApointmens().toString());
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println("Dr. Empleado del Hospital: De los Muñecos \nDepartamento: Cancerología");
+    }
+
     /**
      * clase anidada: AvailableAppoinment dentro de la clase model.Doctor
      * */
