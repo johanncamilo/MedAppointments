@@ -11,8 +11,11 @@
 ### Método Constructor:
 
 * Crea instancias de una clase
-* se invoca con el new()
-* se llama igual que su clase poseedora
+* se invoca con el **new()**
+```java
+Doctor joaquin = new Doctor("Joaquin", "urologo");
+```
+* el constructor se llama igual que su clase poseedora
 * Java proporciona un metodo constructor por defecto si no se crea
 
 ### Static:
@@ -30,17 +33,17 @@
 * ej: En la clase doctor serían los constructores ⬇️
 
 ```java
- model.Doctor() { ...}
- model.
-
-Doctor(String name, int age) { ...}
+public class Doctor {
+    Doctor() { ... }
+    Doctor(String name, int age) { ... }
+}
 ```
 
 ### Niveles de acceso
 
-* **protected:** sólo pakage, padre, e hijos
-* **default:** sólo pakage, padre
-* **private:** sólo padre
+* **protected:** sólo pakage padre e hijos
+* **default:**   sólo pakage y padre
+* **private:**   sólo padre
 
 ### Objetos
 
@@ -91,16 +94,37 @@ class ClaseExterior {
 * Un Enum es un tipo de dato que permite definir una colección de constantes
 * También tiene Contructor, métodos y atributos
 
+```java
+enum Day {
+    MONDAY("Lunes", "Lundi"),
+    TUESDAY("Martes", "Mardi"),
+    WEDNESDAY("Miercoles", "Mercredi"),
+    THURSDAY("Jueves", "Jeudi"),
+    FRIDAY("Viernes", "Vendredi"),
+    SATURDAY("Sábado", "Samedi"),
+    SUNDAY("Domingo", "Dimanche");
+}
+```
+
 ### SUPER
 
 * El constructor de la padre **SIEMPRE** debe ir al inicio del constructor hijo
   ![img.png](img/SUPER.png)
 
 ```java
-super(name,email);
+public Patient(String name, String email) {
+    super(name,email);    
+}
 ```
-
 > Constructor padre dentro de constructor hijo
+
+```java
+@Override
+public String  toString() {
+    return super.toString() + String.format("\nAge: %s, \nWeight: %s, \nHeight: %s, \nBlood: %s", getBirthday(), getWeight(), getHeight(), getBlood());
+}
+```
+> sobreescritura de método padre en el hijo
 
 ## SOBREESCRITURA (OVERRIDE)
 
@@ -112,10 +136,10 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 ### toString() Override:
 
 * Método de la clase *Object* que es por defecto el papá de todas las clases de manera implicita
-* al ejecutar System.out.println(object) se está ejecutando .toString()
-* por defecto trae el nombre de la clase más un hashCode
+* al ejecutar System.out.println(objeto) se está ejecutando .toString()
+* .tosString() por defecto trae el nombre de la clase más un hashCode
 * por eso se modifica su comportamiento con un @Override en los hijos
-* Aquí se hizo Override de .toString() e model.User y model.Patient
+* Aquí se hizo Override de .toString() de model.User model.Patient y model.Doctor
 
 ## Polimorfismo
 
@@ -129,7 +153,7 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 * Es un contrato que sólo define los métodos y tipos de retorno
 * JAMÁS tiene bloques de código
 * permiten  "simular" herencia múltiple
-* buena práctica que comiencen por **I** y terminen por **able**
+* buena práctica que comiencen por **I**(i) y terminen por **able**
 * palabra reservada **implements**
 
 ## COMPOSICIÓN
@@ -152,13 +176,37 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 ![img.png](img/collections.png)
 > Jerarquía de los collections en Java
 
+### ¿Cuándo usar cada tipo de colección?
+* **List:** Cuando necesitas mantener un orden específico de elementos y acceder a ellos por índice.
+* **Set:** Cuando necesitas garantizar que no haya elementos duplicados y el orden no es importante.
+* **Map:** Cuando necesitas asociar un valor a una clave única.
+* **Queue:** Cuando necesitas procesar elementos en el orden en que fueron añadidos.
+
 ****
-![img.png](img/decisionMapCollections.png)
+![img.png](img/decisionMapCollections2.png)
 > Diagrama de decisión para uso de collections en Java
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class EjemploColecciones {
+    public static void main(String[] args) {
+        List<String> frutas = new ArrayList<>();
+        frutas.add("Manzana");
+        frutas.add("Banana");
+        frutas.add("Pera");
+
+        for (String fruta : frutas) {
+            System.out.println(fruta);
+        }
+    }
+}
+```
 
 ## CLASES ABSTRACTAS
 
-Los métodos obligatoriios son los que tienen la palabra reservada **abstract**
+Los métodos obligatorios son los que tienen la palabra reservada **abstract**
 
 ```java
 abstract void dibujate();
