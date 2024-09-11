@@ -59,7 +59,17 @@ public class Main {
         User docM = new Doctor("Dr. Mario", "drmario@gmail.com", "prescribing");
         User patL = new Patient("Luigi", "luigi@gmail.com");
 
-        docM.showDataUser();
-        patL.showDataUser();
+//        docM.showDataUser();
+//        patL.showDataUser();
+
+//        hack para instanciar una clase abstracta
+        User anonymous = new User("anonym", "anonym@gmail.com") {
+            @Override
+            public void showDataUser() {
+                System.out.println("anonymous soy tu papi");
+            }
+        };
+        anonymous.showDataUser();
+
     }
 }

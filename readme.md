@@ -12,9 +12,11 @@
 
 * Crea instancias de una clase
 * se invoca con el **new()**
+
 ```java
 Doctor joaquin = new Doctor("Joaquin", "urologo");
 ```
+
 * el constructor se llama igual que su clase poseedora
 * Java proporciona un metodo constructor por defecto si no se crea
 
@@ -34,8 +36,9 @@ Doctor joaquin = new Doctor("Joaquin", "urologo");
 
 ```java
 public class Doctor {
-    Doctor() { ... }
-    Doctor(String name, int age) { ... }
+    Doctor() { ...}
+
+    Doctor(String name, int age) { ...}
 }
 ```
 
@@ -113,17 +116,20 @@ enum Day {
 
 ```java
 public Patient(String name, String email) {
-    super(name,email);    
+    super(name, email);
 }
 ```
+
 > Constructor padre dentro de constructor hijo
 
 ```java
+
 @Override
-public String  toString() {
+public String toString() {
     return super.toString() + String.format("\nAge: %s, \nWeight: %s, \nHeight: %s, \nBlood: %s", getBirthday(), getWeight(), getHeight(), getBlood());
 }
 ```
+
 > sobreescritura de método padre en el hijo
 
 ## SOBREESCRITURA (OVERRIDE)
@@ -148,6 +154,8 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 
 ## INTERFACES
 
+* Se usan cuando se piensa en acciones que se comparten entre muchas clases
+* Relación no lineal
 * Se enfocan en encapsular comportamiento redundante
 * Comportamientos que pueden ser reutilizables
 * Es un contrato que sólo define los métodos y tipos de retorno
@@ -155,6 +163,7 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 * permiten  "simular" herencia múltiple
 * buena práctica que comiencen por **I**(i) y terminen por **able**
 * palabra reservada **implements**
+* Interfaces comunes (Runnable, Drawable, Callable, Visualizable)
 
 ## COMPOSICIÓN
 
@@ -177,6 +186,7 @@ Cuando se hereda un método y se redefine con una implementación distinta a la 
 > Jerarquía de los collections en Java
 
 ### ¿Cuándo usar cada tipo de colección?
+
 * **List:** Cuando necesitas mantener un orden específico de elementos y acceder a ellos por índice.
 * **Set:** Cuando necesitas garantizar que no haya elementos duplicados y el orden no es importante.
 * **Map:** Cuando necesitas asociar un valor a una clave única.
@@ -206,7 +216,8 @@ public class EjemploColecciones {
 
 ## CLASES ABSTRACTAS
 
-Los métodos obligatorios son los que tienen la palabra reservada **abstract**
+* Los métodos obligatorios son los que tienen la palabra reservada **abstract**
+* Los métodos que no tienen esa palabra reservada no son obligatorios
 
 ```java
 abstract void dibujate();
@@ -246,3 +257,74 @@ abstract void dibujate();
 > * La clase concreta que herede de la hija abstracta debe implementar los metodos obligatorios usando **polimorfismo**
     ![img.png](img/hijaAbstracta.png)
     ![img.png](img/implHijaAbstracta.png)
+
+## Clases anónimas
+
+* clases de ciclo de vida corto
+* clase para una sola tarea
+* Instanciar una clase abstracta de manera *anónima*
+* Esa clase anónima sólo está disponible en la misma clase no permite reutilización
+* sólo está vigente al momento de instanciarse
+* hack para instanciar clases abstractas e interfaces
+
+![img.png](abstracto.png)
+> * que el diseño de mis apps esté orientado a las interfaces y no a la implementación
+> * tratar de manera homogenea y con independencia mis modulos para programas más escalables y eficientes
+
+### Métodos default en Interfaces
+
+* son métodos con una implementación por defecto, fue un razgo que se introdujo en java 8
+
+```java
+interface MiInterfaz {
+    void metodoAbstracto();
+
+    default void metodoDefault() {
+        System.out.println("Implementación por defecto del método");
+    }
+}
+```
+
+> Consideraciones:
+> * **conflicto de métodos default:** si una clase implementa varias interfaces con el mismo método default el conflicto
+    > se debe resolver dentro de la misma clase.
+> * Las interfaces pueden tener métodos estáticos
+
+### Métodos privados en Iterfaces
+* sólo puede ser accedido dentro de la interfaz
+* se usa para implementar métodos en la iterfaz
+* se introdujo en Java 9
+
+## Maven
+
+* Sirve para compilar y empaquetar el proyecto
+* Gestion de dependencias
+* Evita manejo manual de archivos jar y mejora gestión del proyecto
+
+#### pom.xml
+
+```xhtml
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.javabank</groupId>
+    <artifactId>atm</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
+</project>
+```
+
+> * Plantilla que define conf basica del proyecto
+> * los tags son muy dicientes
+
+****
+
+```shell
+mvn clean install
+``` 
+
+> cmd utilizado para limpiar builds anteriores y luego compila e instala el proj en el repositorio local de Maven

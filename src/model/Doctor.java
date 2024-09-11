@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor extends User {
+public class Doctor extends User implements IHumanable{
     private String speciality;
 
     /**
@@ -12,6 +12,7 @@ public class Doctor extends User {
     public Doctor(String name, String email, String speciality) {
         super(name, email);
         this.speciality = speciality;
+        saludar();
         System.out.printf("Hola doctor %s %s %n", this.speciality, super.getName());
     }
 
