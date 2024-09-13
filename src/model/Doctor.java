@@ -1,14 +1,16 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor extends User implements IHumanable{
+public class Doctor extends User implements IHumanable {
     private String speciality;
 
     /**
      * Sobrecarga de método constructor
-     * */
+     */
     public Doctor(String name, String email, String speciality) {
         super(name, email);
         this.speciality = speciality;
@@ -30,11 +32,11 @@ public class Doctor extends User implements IHumanable{
 
     /**
      * atributo ArrayList tipo <AvailableAppoinment>
-     *     es un arreglo de tamaño dinamico
-     * */
+     * es un arreglo de tamaño dinamico
+     */
     ArrayList<AvailableAppointment> availableApointmens = new ArrayList<>();
 
-    public void addAppointment(Date date, String time) {
+    public void addAppointment(String date, String time) {
         // instanciación de clase anidada dentro de clase externa
         availableApointmens.add(new AvailableAppointment(date, time));
     }
@@ -46,7 +48,7 @@ public class Doctor extends User implements IHumanable{
     /**
      * Con este Override se está reutilizando el comportamiento del Override en el padre
      * Y con la clase inner le está añadiendo otro comportamiento
-     * */
+     */
     @Override
     public String toString() {
         return super.toString() + String.format("\nSpeciality: %s, \nAvailable: %s", getSpeciality(), getAvailableApointmens().toString());
@@ -59,19 +61,28 @@ public class Doctor extends User implements IHumanable{
 
     /**
      * clase anidada: AvailableAppoinment dentro de la clase model.Doctor
-     * */
+     */
     public static class AvailableAppointment {
         private int id;
         private Date date;
         private String time;
+        private final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
-        public AvailableAppointment(Date date, String time) {
-            this.date = date;
+        public AvailableAppointment(String date, String time) {
+            try {
+                this.date = format.parse(date);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             this.time = time;
         }
 
         public Date getDate() {
             return date;
+        }
+
+        public String getDate(String date) {
+            return format.format(date);
         }
 
         public void setDate(Date date) {
@@ -88,7 +99,7 @@ public class Doctor extends User implements IHumanable{
 
         @Override
         public String toString() {
-             return String.format("Available appointments \nDate: %s, \n Time: %s", getDate(), getTime());
+            return String.format("Available appointments \nDate: %s, \n Time: %s", getDate(), getTime());
         }
     }
 }
