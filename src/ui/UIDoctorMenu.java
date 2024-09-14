@@ -24,6 +24,7 @@ public class UIDoctorMenu {
 
             switch (response) {
                 case 1:
+                    showAddAvailableAppointments();
                     break;
                 case 2:
                     break;
@@ -35,12 +36,12 @@ public class UIDoctorMenu {
         } while (response != 0);
     }
 
-    private static void showAvailableAppointments() {
+    private static void showAddAvailableAppointments() {
         int response = 0;
 
         do {
-            System.out.println("Add available appointment");
-            System.out.println("Select a date");
+            System.out.println(":: Add available appointment");
+            System.out.println(":: Select a date");
 
             for (int i = 0; i < 3; i++) {
                 int j = i + 1;
@@ -54,7 +55,7 @@ public class UIDoctorMenu {
 
 
             if (response > 0 && response < 4) {
-                System.out.printf("%d. %s\n", response, UIMenu.MONTHS[response]);
+                System.out.printf("%d. %s\n", response, UIMenu.MONTHS[response-1]);
 
                 System.out.println("Insert the date available: [dd/mm/yyyy]");
 

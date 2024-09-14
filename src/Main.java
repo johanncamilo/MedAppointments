@@ -4,6 +4,8 @@ import model.User;
 
 import java.util.Date;
 
+import static ui.UIMenu.showMenu;
+
 enum Level {
     LOW, MEDIUM, HIGH
 }
@@ -33,43 +35,6 @@ enum Day {
 
 public class Main {
     public static void main(String[] args) {
-
-        Doctor myDoctor = new Doctor("Camilo Colmenares", "camilo@gmail.com", "Radiologo");
-        myDoctor.addAppointment(new Date(), "4pm");
-        myDoctor.addAppointment(new Date(), "1pm");
-        myDoctor.addAppointment(new Date(), "10am");
-
-        System.out.println("😎");
-        System.out.println(myDoctor);
-
-//        model.Doctor drPaulVazo = new model.Doctor("Polvazo", "paulvazo@gmail.com", "Kinesiologo");
-
-        // showMenu();
-        Patient patient = new Patient("Anai", "anai@gmail.com");
-
-//        Level mylevel = Level.HIGH;
-//        System.out.println(mylevel);
-//
-//        System.out.println(Day.MONDAY.getSpanish());
-//        System.out.println(Day.THURSDAY.getFrench());
-
-//        System.out.println(patient);
-
-
-        User docM = new Doctor("Dr. Mario", "drmario@gmail.com", "prescribing");
-        User patL = new Patient("Luigi", "luigi@gmail.com");
-
-//        docM.showDataUser();
-//        patL.showDataUser();
-
-//        hack para instanciar una clase abstracta
-        User anonymous = new User("anonym", "anonym@gmail.com") {
-            @Override
-            public void showDataUser() {
-                System.out.println("anonymous soy tu papi");
-            }
-        };
-        anonymous.showDataUser();
-
+        showMenu();
     }
 }

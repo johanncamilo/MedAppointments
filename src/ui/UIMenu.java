@@ -22,7 +22,7 @@ public class UIMenu {
             System.out.println("0.   Salir");
 
             Scanner sc = new Scanner(System.in);
-            response = Integer.valueOf(sc.nextLine());
+            response = Integer.parseInt(sc.nextLine());
 
             switch (response){
                 case 1:
@@ -68,6 +68,7 @@ public class UIMenu {
                     if (d.getEmail().equals(email)) {
                          emailCorrect = true;
                          doctorLogged = d;
+                         UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }

@@ -1,5 +1,8 @@
 package old;
 
+import model.Patient;
+import model.User;
+
 import java.util.Date;
 
 enum Level {
@@ -69,6 +72,20 @@ public class Main {
 
         System.out.println(Day.MONDAY.getSpanish());
         System.out.println(Day.THURSDAY.getFrench());
+
+        User docM = new model.Doctor("Dr. Mario", "drmario@gmail.com", "prescribing");
+        User patL = new Patient("Luigi", "luigi@gmail.com");
+
+//        docM.showDataUser();
+//        patL.showDataUser();
+
+//        hack para instanciar una clase abstracta
+        User anonymous = new User("anonym", "anonym@gmail.com") {
+            @Override
+            public void showDataUser() {
+                System.out.println("anonymous soy tu papi");
+            }
+        };
 
     }
 }

@@ -7,6 +7,12 @@ import java.util.Date;
 
 public class Doctor extends User implements IHumanable {
     private String speciality;
+    /**
+     * atributo ArrayList tipo <AvailableAppoinment>
+     * es un arreglo de tamaño dinamico
+     */
+    private ArrayList<AvailableAppointment> availableApointmens = new ArrayList<>();
+
 
     /**
      * Sobrecarga de método constructor
@@ -14,8 +20,8 @@ public class Doctor extends User implements IHumanable {
     public Doctor(String name, String email, String speciality) {
         super(name, email);
         this.speciality = speciality;
-        saludar();
-        System.out.printf("Hola doctor %s %s %n", this.speciality, super.getName());
+//        saludar();
+//        System.out.printf("Hola doctor %s %s %n", this.speciality, super.getName());
     }
 
     public String getSpeciality() {
@@ -29,12 +35,6 @@ public class Doctor extends User implements IHumanable {
     public void showName() {
         System.out.println(super.getName());
     }
-
-    /**
-     * atributo ArrayList tipo <AvailableAppoinment>
-     * es un arreglo de tamaño dinamico
-     */
-    ArrayList<AvailableAppointment> availableApointmens = new ArrayList<>();
 
     public void addAppointment(String date, String time) {
         // instanciación de clase anidada dentro de clase externa
@@ -77,11 +77,11 @@ public class Doctor extends User implements IHumanable {
             this.time = time;
         }
 
-        public Date getDate() {
-            return date;
-        }
+//        public Date getDate(String date) {
+//            return date;
+//        }
 
-        public String getDate(String date) {
+        public String getDate() {
             return format.format(date);
         }
 
