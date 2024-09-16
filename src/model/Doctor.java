@@ -77,9 +77,9 @@ public class Doctor extends User implements IHumanable {
             this.time = time;
         }
 
-//        public Date getDate(String date) {
-//            return date;
-//        }
+        public Date getDate(String DATE) {
+            return date;
+        }
 
         public String getDate() {
             return format.format(date);
